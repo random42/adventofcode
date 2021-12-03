@@ -1,0 +1,10 @@
+.history/
+
+node_modules/
+build/
+gen/*
+tmp/*
+
+!**/.gitkeep
+*.log
+*.env
