@@ -1,19 +1,20 @@
 // require('../globals');
-import assert from 'assert'
-import axios from 'axios'
-import fs from 'fs'
-import { captureRejections } from 'events'
-import path from 'path'
-import { pipeline } from 'stream'
-import aoc from '../aoc'
+import assert from 'assert';
+import axios from 'axios';
+import fs from 'fs';
+import { captureRejections } from 'events';
+import path from 'path';
+import { pipeline } from 'stream';
+import aoc from '../aoc';
 
 require('dotenv').config();
 const log = console.error.bind(console);
 async function main() {
-  const [ n ] = process.argv.slice(2);
+  const [n] = process.argv.slice(2);
+  log(n);
   const input = fs.createReadStream(`data/input/${n}`);
   const res = await aoc[`d${n}`](input);
-  log(res)
+  log(res);
 }
 
 main()

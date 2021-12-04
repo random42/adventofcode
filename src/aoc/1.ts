@@ -1,11 +1,11 @@
 import { Readable } from 'stream';
 import cloneable from 'cloneable-readable';
-import * as readline from 'readline'
+import * as readline from 'readline';
 import _ from 'lodash';
 
 const log = console.error.bind(console);
 
-async function d1Part1(input: Readable) {
+async function d1_1(input: Readable) {
   const rl = readline.createInterface({
     input,
   });
@@ -21,7 +21,7 @@ async function d1Part1(input: Readable) {
   return n;
 }
 
-async function d1Part2(input: Readable, len: number) {
+async function d1_2(input: Readable, len: number) {
   const rl = readline.createInterface({
     input,
   });
@@ -31,14 +31,14 @@ async function d1Part2(input: Readable, len: number) {
   // let t = 0;
   for await (const line of rl) {
     // t++;
-    const x = +line
-    if (!Number.isInteger(x)) log(x)
-    for (let i = 0; i < len-1;i++) {
+    const x = +line;
+    if (!Number.isInteger(x)) log(x);
+    for (let i = 0; i < len - 1; i++) {
       w[i] = w[i] + x;
     }
     w.unshift(x);
     // if (t < 5) log(x, w)
-    if (w[len-1] > w[len]) {
+    if (w[len - 1] > w[len]) {
       n++;
     }
     w.pop();
@@ -50,7 +50,7 @@ export async function d1(input: Readable) {
   const stream = cloneable(input);
   return Promise.all([
     // d1Part1(stream.clone()),
-    d1Part2(stream.clone(), 1),
-    d1Part2(stream, 3),
+    d1_2(stream.clone(), 1),
+    d1_2(stream, 3),
   ]);
 }
