@@ -9,10 +9,10 @@ import aoc from '../aoc'
 
 require('dotenv').config();
 const log = console.error.bind(console);
-
 async function main() {
   const [ n ] = process.argv.slice(2);
-  const res = await aoc[`d${n}`](process.stdin);
+  const input = fs.createReadStream(`data/input/${n}.txt`);
+  const res = await aoc[`d${n}`](input);
   log(res)
 }
 
