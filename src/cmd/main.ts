@@ -11,7 +11,7 @@ require('dotenv').config();
 const log = console.error.bind(console);
 async function main() {
   const [ n ] = process.argv.slice(2);
-  const input = fs.createReadStream(`data/input/${n}.txt`);
+  const input = fs.createReadStream(`data/input/${n}`);
   const res = await aoc[`d${n}`](input);
   log(res)
 }
