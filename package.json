@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "bitwise": "^2.1.0",
     "chance": "^1.1.8",
     "cloneable-readable": "^2.1.0",
     "dotenv": "^10.0.0",
